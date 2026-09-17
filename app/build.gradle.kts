@@ -1,8 +1,25 @@
 plugins {
-    id("com.android.application") version "8.2.2" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.22" apply false
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
 }
 
-tasks.register("clean", Delete::class) {
-    delete(rootProject.buildDir)
+android {
+    namespace = "com.example"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.example.globalfootball"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
